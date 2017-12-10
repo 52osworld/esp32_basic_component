@@ -16,6 +16,7 @@
 #include "esp_wifi.h"
 
 #include "user_wifi.h"
+#include "socket_msg.h"
 static const char *TAG = "App";
 
 
@@ -33,4 +34,13 @@ void app_main()
 
   nvs_flash_init();
   user_wifi_config();
+
+  init_socket();
+  int count = 20;
+  while (count) {
+      count--;
+      vTaskDelay(3000 / portTICK_RATE_MS);
+      send_socket_msg("Send from ESP32\n");
+  }
+  release_socket();
 }

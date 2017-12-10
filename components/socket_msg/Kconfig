@@ -1,0 +1,23 @@
+menu "SocketMsg Config"
+
+config SOCKET_MSG
+    bool "SocketMsg"
+    default n
+    help
+	    enable SocketMsg.
+
+config SOCKET_IP
+    string "Socket server IP"
+    default "192.168.31.242"
+    depends on SOCKET_MSG
+    help
+        The Remote Server IP.
+
+config SOCKET_PORT
+    int "Socket server Port"
+    default "61028"
+    depends on SOCKET_MSG
+    help
+        The Remote Server port.
+
+endmenu

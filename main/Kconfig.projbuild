@@ -1,4 +1,5 @@
 menu "User Configuration"
 source ../components/user_wifi/Kconfig
+source ../components/socket_msg/Kconfig
 
 endmenu
