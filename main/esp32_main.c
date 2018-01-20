@@ -17,6 +17,7 @@
 
 #include "user_wifi.h"
 #include "socket_msg.h"
+#include "user_spiffs.h"
 static const char *TAG = "App";
 
 
@@ -34,6 +35,12 @@ void app_main()
 
   nvs_flash_init();
   user_wifi_config();
+  
+  user_init_spiffs();
+
+#if CONFIG_TEST_SPIFFS
+  test_spiffs();
+#endif
 
   init_socket();
   int count = 20;

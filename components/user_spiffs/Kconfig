@@ -1,0 +1,14 @@
+menu "USER SPIFFS Config"
+
+config FORMAT_IF_MOUNT_FAILED
+    bool "Format if Mount failed"
+    default "y"
+    help
+        if the spiffs image in flash is mount failed, format the spiffs flash partition
+
+config TEST_SPIFFS
+    bool "Test spiffs"
+    default "y"
+    help
+        Do a spiffs test in this example
+endmenu
