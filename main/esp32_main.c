@@ -35,19 +35,14 @@ void app_main()
 
   nvs_flash_init();
   user_wifi_config();
-  
-  user_init_spiffs();
+
+
 
 #if CONFIG_TEST_SPIFFS
   test_spiffs();
 #endif
 
-  init_socket();
-  int count = 20;
-  while (count) {
-      count--;
-      vTaskDelay(3000 / portTICK_RATE_MS);
-      send_socket_msg("Send from ESP32\n");
-  }
-  release_socket();
+#if CONFIG_SOCKET_MSG
+  test_socket();
+#endif
 }

@@ -5,4 +5,7 @@
 int init_socket();
 void send_socket_msg(char *msg);
 void release_socket();
+
+void test_socket();
+
 #endif

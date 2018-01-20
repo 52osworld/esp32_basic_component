@@ -5,11 +5,12 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "esp_spiffs.h"
-
+#include "user_spiffs.h"
 static const char *TAG = "test_spiffs";
 
 void test_spiffs(void)
 {
+    user_init_spiffs();
     // Use POSIX and C standard library functions to work with files.
     // First create a file.
     ESP_LOGI(TAG, "Opening file");
